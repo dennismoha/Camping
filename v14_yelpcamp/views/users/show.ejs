@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+	<div class = "row">
+			<div class = "col-md-4">
+				<div class = "thumbnail">
+					<div id = "username">
+						<h1 onclick="myFunction()"> <%= userFound.firstname + " " + userFound.lastname %> </h1>
+					</div>				
+				<img src = "<%=userFound.avatar%>" alt="user image prof " style="height:100px; width: 100px">
+				<p><b>email</b> :<%= userFound.email %> </p>
+			</div>
+			</div>
+
+			<div class = "col-md-8">
+
+			</div>
+	</div>
+	<% campgrouns.forEach(function(campground) {%>
+			 <%=campground.name%> 
+	<% }) %>
+	<% campgrouns.nameee %>
+
+
+	<script type="text/javascript">
+		function myFunction() {
+  				var text = document.getElementById("username").innerHTML;
+  				document.getElementById("username").innerHTML = text.toUpperCase();
+		}
+	</script>
+
+ <% include ../partials/footer %>

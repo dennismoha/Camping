@@ -1,0 +1,19 @@
+{
+  "name": "yelpcamp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":  "nodemon app.js"
+  },
+  "author": "Dennis moha",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.4",
+    "nodemon": "^1.18.11"
+  }
+}

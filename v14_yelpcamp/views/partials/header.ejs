@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<title>Giafranco Zola v5</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lobster|Ubuntu" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel = "stylesheet" href = "/stylesheet/main.css" >
+<link rel = "stylesheet" href = "/stylesheet/landing.css">
+
+
+<link href="https://fonts.googleapis.com/css?family=Arimo|Libre+Baskerville" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Arimo|Libre+Baskerville|Open+Sans+Condensed:300" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Arimo|Karla:400,700i|Libre+Baskerville|Open+Sans+Condensed:300" rel="stylesheet">
+<style>
+.picc {
+	height: 320px;
+	width: 320px;
+}
+
+.goback {
+	 font-family: 'Ubuntu', sans-serif;
+}
+.goback1 {
+	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Lobster', cursive;
+}
+
+.bd {
+	background-image:   url("http://www.aljanh.net/data/archive/img/2231164042.jpeg");
+	
+    background-size:contain;
+	
+}
+
+#land_backgroud {
+
+	background-color: blue;
+}
+
+#msg {
+	display: block;
+	width: 100;
+	color: #636e72;
+	text-align: center;
+	padding:1%;
+	background-color: #ff7675;
+	margin: 1.2em;
+}
+
+#msg2 {
+	display: block;
+	width: 100;
+	color: blue;
+	text-align: center;
+	padding:1%;
+	background-color: #81ecec;
+	margin: 1.2em;
+}
+
+#landing {
+	html: 100%;
+	background-color: #dfe6e9;
+}
+
+#description {
+	width: auto;
+	margin: 10px;
+	border: 1px dotted brown;
+	border-radius: 5px;
+	font-family: 'Arimo', sans-serif;
+	font-family: 'Libre Baskerville', serif;
+}
+#submittedby {
+	font-family: 'Arimo', sans-serif;
+	font-family: 'Libre Baskerville', serif;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+#title {
+	font-family: 'Arimo', sans-serif;
+	font-family: 'Libre Baskerville', serif;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-family: 'Karla', sans-serif;
+	text-align: center;
+}
+
+</style>
+</head>
+<body>
+
+<nav class = "navbar nav-default bg-info">
+	<div class = "container-fluid">
+		<div class = "navbar-header">
+			<a class = "navbar-brand" href = "/">Home</a>
+		</div>
+
+		<div class = "collapse navbar-collapse">
+			<ul class = "nav navbar-nav navbar-right">
+				<% if(!currentUser){%>
+					<li><a href = "/signup">Signup</a></li>
+					<li><a href = "/login">Login</a></li>
+				<% }else { %>
+					<li><a href = "/">singed in as <%= currentUser.username %> </a></li>
+					<li><a href = "/logout">Logout</a></li>
+				<% } %>
+			</ul>
+		</div>
+
+	</div>
+</nav>
+
+<div class = "container">
+	<% if (error && error.length > 0) { %>
+		<div id = "msg"><%= error %></div>
+	<% } %>
+
+	<% if (success && success.length > 0) {%>
+		<div id = "msg2"><%= success %></div>
+</div>
+	<% } %>

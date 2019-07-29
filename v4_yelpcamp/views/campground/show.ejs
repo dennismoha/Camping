@@ -1,0 +1,27 @@
+<% include ../partials/header %>
+
+<h1> this is a header one file for the Description page</h1>
+
+<p> this is the name of <%= campground.name %></p>
+
+<p><img src="<%= campground.image %>" alt = "no image"/></p>
+<p> <%= campground.Description %></p>
+											   
+<p>Add comment <a href = "/campgroundsites/<%= campground._id %>/comment/new" class="btn btn-primary">Comment</a></p>
+
+
+
+
+<% campground.comments.forEach(function(comment){ %>
+	<p> <strong> <%= comment.author %></strong> - <%= comment.text %>	 </p>
+	
+<% }) %>
+
+<p>Go back to view other campsites <a href = "/campgroundsites" class="btn btn-primary">back</a></p> 
+<br/> <br/>
+
+
+	
+
+
+<% include ../partials/footer %>

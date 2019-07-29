@@ -1,0 +1,71 @@
+<% include ../partials/header %>
+
+<!Doctype html >
+<HTML>
+	
+	<div class = "container">
+		<div class = "row">
+			<div class = "col-md-3">
+				<h3> campground </h3>
+					<div class = "list-group">
+						<div class  = "list">
+							<li class ="list-group-item active"> Home </l1>
+							<li class ="list-group-item"> Contact </l1>
+							<li class ="list-group-item"> Away </l1>
+						</div>
+					</div>
+			</div>
+		
+
+		<div class = "col-md-9">
+			<div class = "thumbnail">
+				<h3>welcome to  <%= campground.name %> </h3>
+				<div><img class = "img-responsive" src="<%= campground.image %>" alt = "no image"/></div>
+
+					<div class = "caption-full">
+						<h4 class = "pull-right">
+							8.00$/night 
+						</h4>
+
+						<h4><a href = "#"> <%= campground.name %></a></h4>
+					</div>
+
+
+				<p> <%= campground.Description %></p>
+														   
+			
+				<p><B>BACK <a href = "/campgroundsites" class="btn btn-primary">back</a></p> 
+				<br/> <br/>			
+
+			</div>
+
+
+		
+
+		<div class = "well" >
+			<div class = "text-right">
+				<a href = "/campgroundsites/<%= campground._id %>/comment/new" class="btn btn-primary">new comment </a>
+			</div>
+			<hr>
+			  <% campground.comments.forEach(function(comment){ %>
+				<div class = "row" >
+					<div class = "col-md-12">
+						 <strong> <%= comment.author %></strong>
+						 	<span class = "pull-right">
+						 		15mins ago
+						 	</span>						
+							<p>  <%= comment.text %>	 </p>
+					
+						 <% }) %>
+
+				</div>				
+		</div>			
+		</div>
+	</div>
+
+</HTML>
+
+	
+
+
+<% include ../partials/footer %>
